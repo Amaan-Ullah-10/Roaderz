@@ -1,0 +1,58 @@
+<% layout("/layout/boilerplate") %>
+<body>
+    <div class="search">
+      <form action="/listings/search" method="GET">
+        <input type="text" name="location" placeholder="Enter Location" class="col-5 pincode" data-search required>
+        <input type="date" name="date" class="col-5 pincode">
+        <button class="search-btn" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+    
+    <nav class="vehicle-navbar ">
+      <div class="vehicle-item" data-category="car">
+        <i class="fa-solid fa-car-side"></i>
+          <span>Car</span>
+      </div>
+      <div class="vehicle-item" data-category="bus">
+        <i class="fa-solid fa-bus"></i>
+          <span>Bus</span>
+      </div>
+      
+      <div class="vehicle-item" data-category="truck">
+        <i class="fa-solid fa-truck"></i>
+          <span>Truck</span>
+      </div>
+      <div class="vehicle-item" data-category="van">
+        <i class="fa-solid fa-van-shuttle"></i>
+          <span>Van</span>
+      </div>
+      <div class="vehicle-item" data-category="bike">
+        <i class="fa-solid fa-motorcycle"></i>
+          <span>Bike</span>
+      </div>
+</nav>
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 ">
+        <% for(let listing of allListings){%>
+          <a href="/listings/<%= listing._id %>" class="listing-link">
+            <div class="card card-listing vehicle-card col" data-category="<%= listing.category.toLowerCase() %>">
+          
+                    <% if (listing.image.length > 0) { %>
+  <img src="<%= listing.image[0].url %>" class="card-img-top" alt="listing_image" style="height: 20rem;">
+<% } else { %>
+  <img src="/images/rrrr.jpg" class="card-img-top" alt="default image" style="height: 20rem;">
+<% } %>
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                      <p class="card-text"> <b><%= listing.name %></b> <br>
+                    &#8377;<%= listing.renting_price.toLocaleString("en-in") %>/day</p>
+                    </div>
+                  </div>
+            </a>
+              <%}%>
+    </div>
+</body>
+
+<script src="/public/js/filter.js"></script>

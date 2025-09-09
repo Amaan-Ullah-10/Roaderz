@@ -1,0 +1,247 @@
+<% layout("/layout/boilerplate") %>
+
+<body class="text-text-dark">
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-bg-light py-24 md:py-32 flex items-center justify-center min-h-screen-75 relative overflow-hidden rounded-b-lg">
+        <div class="container mx-auto px-6 md:px-12 text-center z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 hero-title">
+                Drive Your Dreams <br class="hidden md:block"> With Our Premium Fleet
+            </h1>
+            <p class="text-lg md:text-xl mb-10 hero-subtitle">
+                Explore a wide range of vehicles for every adventure.
+            </p>
+            <button class="bg-card-bg text-primary-dark hover:bg-primary-light font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all-ease hero-button">
+                Browse Vehicles
+            </button>
+        </div>
+        <!-- Decorative elements for visual appeal -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <circle cx="20" cy="20" r="15" fill="currentColor" class="text-primary-light"></circle>
+                <circle cx="80" cy="80" r="20" fill="currentColor" class="text-primary-medium"></circle>
+                <rect x="50" y="10" width="10" height="10" fill="currentColor" class="text-primary-light"></rect>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Featured Vehicles Section -->
+    <section class="py-16 md:py-24 bg-bg-light">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-text-dark">Our Featured Vehicles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 vehicle-cards">
+                <!-- Vehicle Card 1 -->
+                <div class="bg-card-bg rounded-xl shadow-lg overflow-hidden card-hover transition-all-ease p-6">
+                    <img src="https://placehold.co/600x400/023E8A/f5fbff?text=Luxury+Sedan" alt="Luxury Sedan" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-text-dark mb-2">Luxury Sedan</h3>
+                    <p class="text-primary-medium mb-4">Experience comfort and style with our top-tier luxury sedans.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-primary-dark">$120<span class="text-base text-primary-medium">/day</span></span>
+                        <button class="bg-primary-dark text-bg-light py-2 px-5 rounded-full hover:bg-primary-medium transition-all-ease">Rent Now</button>
+                    </div>
+                </div>
+                <!-- Vehicle Card 2 -->
+                <div class="bg-card-bg rounded-xl shadow-lg overflow-hidden card-hover transition-all-ease p-6">
+                    <img src="https://placehold.co/600x400/3A77BF/f5fbff?text=Family+SUV" alt="Family SUV" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-text-dark mb-2">Family SUV</h3>
+                    <p class="text-primary-medium mb-4">Perfect for family trips, spacious and reliable.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-primary-dark">$90<span class="text-base text-primary-medium">/day</span></span>
+                        <button class="bg-primary-dark text-bg-light py-2 px-5 rounded-full hover:bg-primary-medium transition-all-ease">Rent Now</button>
+                    </div>
+                </div>
+                <!-- Vehicle Card 3 -->
+                <div class="bg-card-bg rounded-xl shadow-lg overflow-hidden card-hover transition-all-ease p-6">
+                    <img src="https://placehold.co/600x400/A2D2FF/023E8A?text=Sport+Car" alt="Sport Car" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-semibold text-text-dark mb-2">Sport Car</h3>
+                    <p class="text-primary-medium mb-4">Feel the thrill with our high-performance sport cars.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-primary-dark">$180<span class="text-base text-primary-medium">/day</span></span>
+                        <button class="bg-primary-dark text-bg-light py-2 px-5 rounded-full hover:bg-primary-medium transition-all-ease">Rent Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-16 md:py-24 bg-card-bg">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-text-dark">How It Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center how-it-works-steps">
+                <div class="p-6 bg-bg-light rounded-xl shadow-md transition-all-ease hover:shadow-lg">
+                    <div class="text-primary-dark mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l7 7zm0 0l5 2 9-9-2-5-5-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-text-dark mb-2">1. Choose Your Vehicle</h3>
+                    <p class="text-primary-medium">Browse our extensive fleet and select the perfect car for your needs.</p>
+                </div>
+                <div class="p-6 bg-bg-light rounded-xl shadow-md transition-all-ease hover:shadow-lg">
+                    <div class="text-primary-dark mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-text-dark mb-2">2. Book Your Dates</h3>
+                    <p class="text-primary-medium">Easily select your pickup and return dates with our flexible booking system.</p>
+                </div>
+                <div class="p-6 bg-bg-light rounded-xl shadow-md transition-all-ease hover:shadow-lg">
+                    <div class="text-primary-dark mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m0 0l7 7 7-7M19 10v10a1 1 0 01-1 1h-3m-7 0h-2a2 2 0 01-2-2v-4a2 2 0 012-2h2m-7 0h2a2 2 0 002-2v-4a2 2 0 00-2-2h-2"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-text-dark mb-2">3. Pick Up & Drive</h3>
+                    <p class="text-primary-medium">Collect your vehicle and enjoy your journey!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-primary-dark text-bg-light py-16 md:py-20 text-center rounded-t-lg">
+        <div class="container mx-auto px-6 md:px-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Hit the Road?</h2>
+            <p class="text-lg md:text-xl mb-8">Book your perfect ride today and start your adventure.</p>
+            <button class="bg-card-bg text-primary-dark hover:bg-primary-light font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all-ease">
+                Get Started
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-footer-bg text-footer-text py-10">
+        <div class="container mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-bold text-bg-light mb-4">Rent A Ride</h3>
+                <p class="text-footer-text-secondary">Your trusted partner for premium vehicle rentals. We offer convenience, comfort, and reliability.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-bg-light mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-bg-light transition-all-ease">Home</a></li>
+                    <li><a href="#" class="hover:text-bg-light transition-all-ease">Vehicles</a></li>
+                    <li><a href="#" class="hover:text-bg-light transition-all-ease">Services</a></li>
+                    <li><a href="#" class="hover:text-bg-light transition-all-ease">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-bold text-bg-light mb-4">Contact Us</h3>
+                <p class="text-footer-text-secondary">123 Vehicle Lane, Drive City, DR 12345</p>
+                <p class="text-footer-text-secondary">Email: info@rentaride.com</p>
+                <p class="text-footer-text-secondary">Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="text-center text-footer-text-secondary mt-8 pt-8 border-t border-theme">
+            &copy; 2025 Rent A Ride. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <!-- ScrollTrigger Plugin for GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script>
+        // Register ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Function to set or toggle theme
+        function setTheme(theme) {
+            const body = document.body;
+            const sunIcon = document.getElementById('sun-icon');
+            const moonIcon = document.getElementById('moon-icon');
+
+            if (theme === 'dark') {
+                body.classList.add('dark');
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark');
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Initialize theme based on local storage or system preference
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                setTheme('dark');
+            } else {
+                setTheme('light');
+            }
+        }
+
+        window.onload = function() {
+            initializeTheme(); // Set theme on load
+
+            // Theme toggle button event listener
+            document.getElementById('theme-toggle').addEventListener('click', () => {
+                if (document.body.classList.contains('dark')) {
+                    setTheme('light');
+                } else {
+                    setTheme('dark');
+                }
+            });
+
+            // Hero Section Animations
+            gsap.from(".hero-title", {
+                duration: 1,
+                y: -50,
+                opacity: 0,
+                ease: "power3.out"
+            });
+            gsap.from(".hero-subtitle", {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                delay: 0.3,
+                ease: "power3.out"
+            });
+            gsap.from(".hero-button", {
+                duration: 1,
+                scale: 0.8,
+                opacity: 0,
+                delay: 0.6,
+                ease: "back.out(1.7)"
+            });
+
+            // Featured Vehicles Cards Animation
+            gsap.from(".vehicle-cards > div", {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                stagger: 0.2, // Animate each card with a slight delay
+                ease: "power2.out",
+                scrollTrigger: { // Use ScrollTrigger for elements coming into view
+                    trigger: ".vehicle-cards",
+                    start: "top 80%", // When the top of the trigger hits 80% of the viewport
+                    toggleActions: "play none none none"
+                }
+            });
+
+            // How It Works Steps Animation
+            gsap.from(".how-it-works-steps > div", {
+                duration: 1,
+                x: -50,
+                opacity: 0,
+                stagger: 0.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: ".how-it-works-steps",
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+
+            // Header fade-in
+            gsap.from("header", {
+                duration: 0.8,
+                y: -100,
+                opacity: 0,
+                ease: "power2.out"
+            });
+        };
+    </script>
+</body>
+</html>

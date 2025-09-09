@@ -1,0 +1,110 @@
+<% layout("/layout/boilerplate") %>
+<body>
+    <div class="main-contact">
+  <div class="container-custom position-relative">
+    <div class="image-side d-none d-md-block">
+      <img src="/images/getintouch.gif" alt="3d Illustration"  height="200px" width="300px"/>
+
+    </div>
+    <div class="form-side">
+      <div class="d-flex align-items-center mb-4">
+        <div class="logo-circle">R</div>
+        <span class="fw-semibold text-dark" style="font-size: 0.875rem;">Roaderz</span>
+      </div>
+      <h1 class="form-title">Let’s Get In Touch.</h1>
+      <p class="form-subtitle">
+        Or just reach out manually to
+        <a href="mailto:roaderz99@gmail.com">roaderz99@gmail.com</a>.
+      </p>
+      <form action="/contact-us" method="POST">
+        <div class="row g-3 mb-3">
+          <div class="col-12 col-sm-6">
+            <label for="firstName" class="form-label">First Name</label>
+            <div class="position-relative">
+              <i class="fas fa-user input-icon"></i>
+              <input
+                type="text"
+                class="form-control ps-5"
+                id="firstName"
+                placeholder="Enter your first name..."
+                name="firstName"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-sm-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <div class="position-relative">
+              <i class="fas fa-user input-icon"></i>
+              <input
+                type="text"
+                class="form-control ps-5"
+                id="lastName"
+                placeholder="Enter your last name..."
+                name="lastName"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <div class="position-relative">
+            <i class="fas fa-envelope input-icon"></i>
+            <input
+              type="email"
+              class="form-control ps-5"
+              id="email"
+              placeholder="Enter your email address..."
+              name="email"
+            />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <div class="d-flex align-items-center border rounded-pill px-3  phone-input-wrapper" style="border-color: #e5e7eb;">
+            <div class="phone-icon-wrapper" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <input
+              type="tel"
+              class="form-control border-0 ps-3"
+              id="phone"
+              placeholder="+91 xxxxx xxxxx"
+              style="box-shadow: none"
+              name="number"
+            />
+            
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea
+            class="form-control"
+            id="message"
+            rows="4"
+            maxlength="300"
+            placeholder="Enter your main text here..."
+            name="msg"
+          ></textarea>
+          <div class="char-count">300/300</div>
+        </div>
+        <button  class="btn-submit">
+          Submit Form
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </button>
+      </form>
+    </div>
+    <div class="blurred-shape" aria-hidden="true"></div>
+  </div>
+  </div>
+</body>

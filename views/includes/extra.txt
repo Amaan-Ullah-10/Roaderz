@@ -1,0 +1,330 @@
+<!-- <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand logo"  data-aos="fade-down" data-aos-duration="1500" href="/home">Roaderz</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-nav main-nav">
+        <a class="nav-link" data-aos="fade-down" data-aos-duration="1500"  href="/home">About Us</a>
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="2000" href="">All listing</a>
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="2500" href="">New listing</a>
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="3000" href="">Contact Us</a>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <% if(!currUser){ %>
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="3500" href="/users/login">Log in</a>
+          <a class="nav-link signup" data-aos="fade-down" data-aos-duration="4000"  href="/users/signup">Get Started  <i class="fa-solid fa-arrow-right"></i></a>
+          <% } %>
+          <% if(currUser){ %>
+            <a class="nav-link" data-aos="fade-down" data-aos-duration="3500" href="/users/logout">Log out</a>
+            <% } %>
+          </div>
+        </div>
+        </div>
+</nav> -->
+
+//////////////
+
+
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300 min-h-screen">
+
+    <!-- Main Navigation Bar -->
+    <header class="bg-white dark:bg-gray-800 shadow-lg py-4 px-6 md:px-12 flex justify-between items-center sticky top-0 z-50 transition-all duration-300 ease-in-out">
+        <!-- Logo -->
+        <div class="text-3xl font-extrabold text-gray-900 dark:text-white rounded-md">
+            <span class="text-gradient">Rent A Ride</span>
+        </div>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-8">
+            <a href="#" class="text-gray-600 dark:text-gray-300 font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Home</a>
+            <a href="#" class="text-gray-600 dark:text-gray-300 font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Vehicles</a>
+            <a href="#" class="text-gray-600 dark:text-gray-300 font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">New Listing</a>
+            <a href="#" class="text-gray-600 dark:text-gray-300 font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300">Contact</a>
+        </nav>
+
+        <!-- Desktop Action Buttons (Login/Logout/Theme Toggle) -->
+        <div class="hidden md:flex items-center space-x-4">
+            <!-- Dynamic Login/Logout Buttons -->
+            <div id="auth-buttons-desktop" class="flex space-x-2">
+                <!-- Buttons will be rendered here by JavaScript -->
+            </div>
+
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300 focus:outline-none">
+                <!-- Sun icon for light mode -->
+                <svg id="sun-icon" class="w-6 h-6 text-gray-700 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M3 12H2m15.325-6.675l-.707-.707M6.05 6.05l-.707-.707m12.728 0l-.707.707M6.05 17.95l-.707.707M12 15a3 3 0 100-6 3 3 0 000 6z"></path>
+                </svg>
+                <!-- Moon icon for dark mode -->
+                <svg id="moon-icon" class="w-6 h-6 text-gray-700 dark:text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Button (Hamburger) -->
+        <div class="flex items-center md:hidden">
+            <!-- Theme Toggle Button for Mobile -->
+            <button id="theme-toggle-mobile" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300 focus:outline-none mr-2">
+                <!-- Sun icon for light mode -->
+                <svg id="sun-icon-mobile" class="w-6 h-6 text-gray-700 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M3 12H2m15.325-6.675l-.707-.707M6.05 6.05l-.707-.707m12.728 0l-.707.707M6.05 17.95l-.707.707M12 15a3 3 0 100-6 3 3 0 000 6z"></path>
+                </svg>
+                <!-- Moon icon for dark mode -->
+                <svg id="moon-icon-mobile" class="w-6 h-6 text-gray-700 dark:text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+            </button>
+            <button id="mobile-menu-button" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300 focus:outline-none">
+                <!-- Hamburger icon -->
+                <svg id="hamburger-icon" class="w-6 h-6 text-gray-700 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <!-- Close icon -->
+                <svg id="close-icon" class="w-6 h-6 text-gray-700 dark:text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer (hidden by default) -->
+    <div id="mobile-menu-container" class="mobile-menu-container fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-800 shadow-xl z-40 md:hidden">
+        <div class="flex justify-between items-center p-6 border-b border-gray-200 dark:border-gray-700">
+            <span class="text-2xl font-bold text-gray-900 dark:text-white">Menu</span>
+            <button id="close-mobile-menu" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300 focus:outline-none">
+                <svg class="w-6 h-6 text-gray-700 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <nav class="flex flex-col p-6 space-y-4">
+            <a href="#" class="text-gray-600 dark:text-gray-300 font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Home</a>
+            <a href="#" class="text-gray-600 dark:text-gray-300 font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Vehicles</a>
+            <a href="#" class="text-gray-600 dark:text-gray-300 font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">New Listing</a>
+            <a href="#" class="text-gray-600 dark:text-gray-300 font-medium hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">Contact</a>
+            <!-- Dynamic Login/Logout Buttons for Mobile -->
+            <div id="auth-buttons-mobile" class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                <!-- Buttons will be rendered here by JavaScript -->
+            </div>
+        </nav>
+    </div>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        const html = document.documentElement;
+        const themeToggleDesktop = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const sunIconDesktop = document.getElementById('sun-icon');
+        const moonIconDesktop = document.getElementById('moon-icon');
+        const sunIconMobile = document.getElementById('sun-icon-mobile');
+        const moonIconMobile = document.getElementById('moon-icon-mobile');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuContainer = document.getElementById('mobile-menu-container');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const authButtonsDesktop = document.getElementById('auth-buttons-desktop');
+        const authButtonsMobile = document.getElementById('auth-buttons-mobile');
+        const authStateText = document.getElementById('auth-state');
+        const toggleAuthStateButton = document.getElementById('toggle-auth-state');
+
+        // Initial theme setup from local storage or system preference
+        const isDarkMode = localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        
+        function updateThemeIcons(isDark) {
+            if (isDark) {
+                sunIconDesktop.classList.add('hidden');
+                moonIconDesktop.classList.remove('hidden');
+                sunIconMobile.classList.add('hidden');
+                moonIconMobile.classList.remove('hidden');
+            } else {
+                sunIconDesktop.classList.remove('hidden');
+                moonIconDesktop.classList.add('hidden');
+                sunIconMobile.classList.remove('hidden');
+                moonIconMobile.classList.add('hidden');
+            }
+        }
+
+        if (isDarkMode) {
+            html.classList.add('dark');
+            updateThemeIcons(true);
+        } else {
+            html.classList.remove('dark');
+            updateThemeIcons(false);
+        }
+
+        // Theme toggle logic
+        function toggleTheme() {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+                updateThemeIcons(false);
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+                updateThemeIcons(true);
+            }
+        }
+        themeToggleDesktop.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+
+
+        // Mobile menu toggle logic
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuContainer.classList.toggle('open');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenuContainer.classList.remove('open');
+            hamburgerIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        });
+
+        // Simulating authentication state with JavaScript
+        let isLoggedIn = false;
+
+        function renderAuthButtons() {
+            // Clear existing buttons
+            authButtonsDesktop.innerHTML = '';
+            authButtonsMobile.innerHTML = '';
+
+            if (isLoggedIn) {
+                // Logged in state
+                const logoutBtn = `<a href="#" class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition-colors duration-300">Log out</a>`;
+                authButtonsDesktop.innerHTML = logoutBtn;
+                authButtonsMobile.innerHTML = logoutBtn;
+                authStateText.textContent = "User is currently logged in.";
+            } else {
+                // Logged out state
+                const loginBtn = `<a href="#" class="px-4 py-2 font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Log in</a>`;
+                const signupBtn = `<a href="#" class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition-colors duration-300">Get Started</a>`;
+                authButtonsDesktop.innerHTML = `${loginBtn} ${signupBtn}`;
+                authButtonsMobile.innerHTML = `${loginBtn} ${signupBtn}`;
+                authStateText.textContent = "User is currently logged out.";
+            }
+        }
+
+        // Toggle state for demonstration
+        toggleAuthStateButton.addEventListener('click', () => {
+            isLoggedIn = !isLoggedIn;
+            renderAuthButtons();
+        });
+
+        // Initial render of buttons
+        renderAuthButtons();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+hellllllllll
+
+    JavaScript for functionality
+    <script>
+        const html = document.documentElement;
+        const themeToggleDesktop = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const sunIconDesktop = document.getElementById('sun-icon');
+        const moonIconDesktop = document.getElementById('moon-icon');
+        const sunIconMobile = document.getElementById('sun-icon-mobile');
+        const moonIconMobile = document.getElementById('moon-icon-mobile');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuContainer = document.getElementById('mobile-menu-container');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+        const authButtonsDesktop = document.getElementById('auth-buttons-desktop');
+        const authButtonsMobile = document.getElementById('auth-buttons-mobile');
+        const authStateText = document.getElementById('auth-state');
+        const toggleAuthStateButton = document.getElementById('toggle-auth-state');
+
+        // Initial theme setup from local storage or system preference
+        const isDarkMode = localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+        function updateThemeIcons(isDark) {
+            if (isDark) {
+                sunIconDesktop.classList.add('hidden');
+                moonIconDesktop.classList.remove('hidden');
+                sunIconMobile.classList.add('hidden');
+                moonIconMobile.classList.remove('hidden');
+            } else {
+                sunIconDesktop.classList.remove('hidden');
+                moonIconDesktop.classList.add('hidden');
+                sunIconMobile.classList.remove('hidden');
+                moonIconMobile.classList.add('hidden');
+            }
+        }
+
+        if (isDarkMode) {
+            html.classList.add('dark');
+            updateThemeIcons(true);
+        } else {
+            html.classList.remove('dark');
+            updateThemeIcons(false);
+        }
+
+        // Theme toggle logic
+        function toggleTheme() {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.theme = 'light';
+                updateThemeIcons(false);
+            } else {
+                html.classList.add('dark');
+                localStorage.theme = 'dark';
+                updateThemeIcons(true);
+            }
+        }
+        themeToggleDesktop.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+
+        // Mobile menu toggle logic
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuContainer.classList.toggle('open');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+        closeMobileMenuButton.addEventListener('click', () => {
+            mobileMenuContainer.classList.remove('open');
+            hamburgerIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        });
+
+        // Simulating authentication state with JavaScript
+        let isLoggedIn = false;
+
+        function renderAuthButtons() {
+            // Clear existing buttons
+            authButtonsDesktop.innerHTML = '';
+            authButtonsMobile.innerHTML = '';
+
+            if (isLoggedIn) {
+                // Logged in state
+                const logoutBtn = `<a href="#" class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition-colors duration-300">Log out</a>`;
+                authButtonsDesktop.innerHTML = logoutBtn;
+                authButtonsMobile.innerHTML = logoutBtn;
+                authStateText.textContent = "User is currently logged in.";
+            } else {
+                // Logged out state
+                const loginBtn = `<a href="#" class="px-4 py-2 font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">Log in</a>`;
+                const signupBtn = `<a href="#" class="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition-colors duration-300">Get Started</a>`;
+                authButtonsDesktop.innerHTML = `${loginBtn} ${signupBtn}`;
+                authButtonsMobile.innerHTML = `${loginBtn} ${signupBtn}`;
+                authStateText.textContent = "User is currently logged out.";
+            }
+        }
+
+        // Toggle state for demonstration
+        toggleAuthStateButton.addEventListener('click', () => {
+            isLoggedIn = !isLoggedIn;
+            renderAuthButtons();
+        });
+
+        // Initial render of buttons
+        renderAuthButtons();
+
+    </script>
+</body>

@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md bg-white border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand logo" data-aos="fade-down" data-aos-duration="1500" href="/home">Roaderz</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav main-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="1500" href="/home">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="2000" href="/listings">All listing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="2500" href="/listings/new">New listing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="3000" href="/contact">Contact Us</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <% if(!currUser){ %>
+          <li class="nav-item">
+            <a class="nav-link" data-aos="fade-down" data-aos-duration="3500" href="/users/login">Log in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link signup" data-aos="fade-down" data-aos-duration="4000" href="/users/signup">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+          </li>
+        <% } %>
+        <% if(currUser){ %>
+          <li class="nav-item">
+            <a class="nav-link" data-aos="fade-down" data-aos-duration="3500" href="/users/logout">Log out</a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>

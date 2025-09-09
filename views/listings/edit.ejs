@@ -1,0 +1,70 @@
+<% layout("/layout/boilerplate") %>
+<div class="row">
+    <div class="col-8 offset-2">
+        <h3>Edit your listing</h3>
+    <form action="/listings/<%= listing._id %>?_method=PUT" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="name" class="form-label">Bike Name</label>
+            <input name="listing[name]" value="<%=listing.name%>" type="text" placeholder="title" class="form-control" required>
+            <div class="valid-feedback">
+                Name looks Good!
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" type="text" placeholder="description" class="form-control" required><%= listing.description %></textarea>
+            <div class="invalid-feedback">
+                Enter short description
+              </div>
+        </div>
+        <div class="mb-3">
+            <img src="<%= existingImage %>" alt="old image">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload new image</label>
+            <input name="image" type="file" class="form-control" multiple>
+
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="price" class="form-label" >Price</label>
+            <input name="listing[price]" value="<%=listing.price%>" type="number" placeholder="price" class="form-control" required>
+            <div class="invalid-feedback">
+                Please Enter valid price
+              </div>
+            </div>
+            <div class="mb-3 col-md-4">
+                <label for="price" class="form-label" >Renting Price</label>
+            <input name="listing[renting_price]" value="<%=listing.renting_price%>" type="number" placeholder="Renting Price" class="form-control" required>
+            <div class="invalid-feedback">
+                Please Enter valid renting price
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-8">
+                <label for="mileage" class="form-label">Mileage</label>
+            <input name="listing[mileage]" value="<%=listing.mileage%>" type="text" placeholder="mileage" class="form-control" required>
+            <div class="invalid-feedback">
+                Please Enter valid mileage
+              </div>
+            </div>
+            <div class="mb-3 col-md-8">
+                <label for="country" class="form-label">Country</label>
+            <input name="listing[country]" value="<%=listing.country%>" type="text" placeholder="india" class="form-control">
+            <div class="invalid-feedback">
+                Please Enter valid country
+              </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+        <input name="listing[location]" value="<%=listing.location%>" type="text" placeholder="location" class="form-control" required>
+        <div class="invalid-feedback">
+            Please Enter valid location
+          </div>
+        </div>
+        <button class="add-button">Update</button>
+    </form>
+    </div>
+</div>

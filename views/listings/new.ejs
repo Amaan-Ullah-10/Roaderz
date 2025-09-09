@@ -1,0 +1,83 @@
+<% layout("/layout/boilerplate") %>
+<div class="row">
+    <div class="col-8 offset-2">
+    <h3>Create a new list</h3>
+    <br><br>
+    <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data" >
+        <div class="mb-3">
+            <label for="name" class="form-label">Bike's Name</label>
+            <input name="listing[name]" type="text" placeholder="Ex. Hayabusa" class="form-control" required>
+            <div class="valid-feedback">
+                Name looks Good!
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" class="form-control" required></textarea>
+            <div class="invalid-feedback">
+                Enter short description
+              </div>
+        </div>
+        <div>
+            <label for="image" class="form-label">Upload Bike's Image</label>
+             <input name="image" type="file" class="form-control" multiple="true" required>
+
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label for="price" class="form-label">Price</label>
+                <input name="listing[price]" type="number" placeholder="100000" class="form-control" required>
+                <div class="invalid-feedback">
+                    Please Enter valid price
+                  </div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="renting_price" class="form-label">Renting Price</label>
+                <input name="listing[renting_price]" type="number" placeholder="1200" class="form-control" required>
+                <div class="invalid-feedback">
+                    Please Enter valid renting price
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-4">
+                <label for="mileage" class="form-label">Mileage</label>
+                <input name="listing[mileage]" type="number" placeholder="3000km" class="form-control" required>
+                <div class="invalid-feedback">
+                    Please Enter valid mileage
+                  </div>
+            </div>
+            <div class="mb-3 col-md-4">
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select" id="category" name="listing[category]" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="Car">Car</option>
+                    <option value="Bus">Bus</option>
+                    <option value="Truck">Truck</option>
+                    <option value="Van">Van</option>
+                    <option value="Bike">Bike</option>
+                </select>
+                <div class="invalid-feedback">
+                    Please Enter valid mileage
+                  </div>
+            </div>
+            <div class="mb-3 col-md-4">
+                <label for="country" class="form-label">Country</label>
+                <input name="listing[country]" type="text" placeholder="india" class="form-control">
+                <div class="invalid-feedback">
+                    Please Enter valid country
+                  </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input name="listing[location]" type="text" placeholder="moradabad,uttar pradesh" class="form-control" required>
+            <div class="invalid-feedback">
+                    Please Enter valid location
+                  </div>
+        </div>
+        <br> <br>
+        <button class="add-button ">Add</button>
+    </form>
+</div>
+</div>
