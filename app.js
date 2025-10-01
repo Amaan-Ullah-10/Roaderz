@@ -9,6 +9,7 @@ import ExpressError from "./utils/ExpressError.js"//handling error status and er
 import listingsRouter from "./routes/dynamic.js";//child route for listings
 import reviewsRouter from "./routes/review.js";//child route for review
 import session, { Cookie } from "express-session";
+import MongoStore from "connect-mongo";//to store session under production level
 import flash from "connect-flash";
 import passport from "passport";
 import LocalStrategy from "passport-local";
@@ -30,8 +31,33 @@ app.use(methodOverride("_method"));//using npm method override for using put req
 app.engine("ejs",ejsMate)//for using same layout for all pages one time only
 app.use(express.static(path.join(__dirname,"/public")))
 
+//connecting to db
+// let mongoURL='mongodb://127.0.0.1:27017/roader';
+const dbURL=process.env.ATLASDB_URL;
+async function main() {
+  try {
+    await mongoose.connect(dbURL);
+    console.log("✅ MongoDB connected");
+  } catch (err) {
+    console.error("❌ MongoDB connection error:", err);
+  }
+}
+main();
+
+//session under production level
+const store = MongoStore.create({
+    mongoUrl: dbURL,
+    secret: 'supersecretcode',
+    touchAfter: 24 * 3600 // time period in seconds
+});
+
+store.on("error",()=>{
+    console.log("Error in mongodb session store",err);
+});
+
 //creating sessions
 const sessionOptions={
+    store,//passing production level session into ewxpress session
     secret:"mysupersecretcode", // Secret key to sign the session ID cookie
     resave: false,// Don't save the session back to the store if it wasn't modified
     saveUninitialized: true, // Save new sessions even if they haven't been modified
@@ -41,6 +67,7 @@ const sessionOptions={
         httpOnly:true//prevent cross scripting attack
     }
 }
+
 app.use(session(sessionOptions));
 app.use(flash());//always used before the routes 
 
@@ -59,16 +86,8 @@ app.use((req,res,next)=>{
     next();
 })
 
-//connecting to db
-let mongoURL='mongodb://127.0.0.1:27017/roader';
-main()
-.then((res)=>{
-    console.log("connection succesful")
-})
-.catch(err => console.log(err));
-async function main() {
-  await mongoose.connect(mongoURL);
-}
+
+
 //parent route
 app.use("/", staticRoutes);
 app.use("/listings",listingsRouter);
@@ -97,4 +116,5 @@ app.get("/",(req,res)=>{
 app.listen(8000,()=>{
     console.log("server is listening to port 8000")
 })
+
 

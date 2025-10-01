@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-md bg-white border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand logo" data-aos="fade-down" data-aos-duration="1500" href="/home">Roaderz</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button"  data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id = "navbarToggler">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class=" navbar-collapse" id="navbarNav">
       <ul class="navbar-nav main-nav">
         <li class="nav-item">
           <a class="nav-link" data-aos="fade-down" data-aos-duration="1500" href="/home">About Us</a>
@@ -16,7 +16,7 @@
           <a class="nav-link" data-aos="fade-down" data-aos-duration="2500" href="/listings/new">New listing</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-aos="fade-down" data-aos-duration="3000" href="/contact">Contact Us</a>
+          <a class="nav-link" data-aos="fade-down" data-aos-duration="3000" href="/contact-us">Contact Us</a>
         </li>
       </ul>
       <ul class="navbar-nav ms-auto">
@@ -37,3 +37,22 @@
     </div>
   </div>
 </nav>
+<script>
+// Your custom navbar logic here
+
+    // Custom mobile menu behavior
+    let  toggleValue = true
+    const navbarToggler = document.querySelector('#navbarToggler'); 
+    const  mobileNav = document.querySelector('#navbarNav');
+     
+   navbarToggler.addEventListener('click',()=>{
+    if(toggleValue){
+       mobileNav.style.display = "none";
+        toggleValue = false
+    }
+    else{
+       mobileNav.style.display = "block";
+       toggleValue = true
+    }
+   })
+</script>
