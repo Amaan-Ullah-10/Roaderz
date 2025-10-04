@@ -32,7 +32,6 @@ app.engine("ejs",ejsMate)//for using same layout for all pages one time only
 app.use(express.static(path.join(__dirname,"/public")))
 
 //connecting to db
-// let mongoURL='mongodb://127.0.0.1:27017/roader';
 const dbURL=process.env.ATLASDB_URL;
 async function main() {
   try {
@@ -47,7 +46,7 @@ main();
 //session under production level
 const store = MongoStore.create({
     mongoUrl: dbURL,
-    secret: 'supersecretcode',
+    secret: process.env.SECRET,
     touchAfter: 24 * 3600 // time period in seconds
 });
 
@@ -58,7 +57,7 @@ store.on("error",()=>{
 //creating sessions
 const sessionOptions={
     store,//passing production level session into ewxpress session
-    secret:"mysupersecretcode", // Secret key to sign the session ID cookie
+    secret:"process.env.SECRET", // Secret key to sign the session ID cookie
     resave: false,// Don't save the session back to the store if it wasn't modified
     saveUninitialized: true, // Save new sessions even if they haven't been modified
     cookie: {
@@ -104,8 +103,8 @@ app.all("*",(req,res,next)=>{
 app.use((err, req, res, next) => {
     // console.error("Error message:", err.message);
     // console.error("Error stack:", err.stack);
-    req.flash("error", err.message || "Something went wrong");
-    res.redirect("/listings");
+    res.status(err.status || 500);
+    res.render("error404", { err });
 })
   
 

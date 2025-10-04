@@ -1,0 +1,22 @@
+<%- layout("/layout/boilerplate") %>
+<body>
+    <div class="error-hero">
+        <div class="error-card">
+            <div class="error-icon">
+                <i class="fa-solid fa-compass"></i>
+            </div>
+            <div class="error-title">
+                <%= err.status || 404 %> - Page Not Found
+            </div>
+            <div class="error-msg">
+                <%= err.message || "Sorry, the page you are looking for does not exist." %>
+            </div>
+            <a href="/home" class="error-btn">
+                Go Home <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <div class="error-footer">
+                Roaderz &mdash; Your journey, our map.
+            </div>
+        </div>
+    </div>
+</body>
