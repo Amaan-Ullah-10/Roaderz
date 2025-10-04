@@ -1,6 +1,6 @@
 {
   "engines": {
-    "node":"20.11.1"
+    "node": "20.11.1"
   },
   "name": "roader",
   "version": "1.0.0",
@@ -19,6 +19,7 @@
     "cloudinary": "^1.30.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^5.1.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "ejs": "^3.1.10",
     "ejs-mate": "^4.0.0",
